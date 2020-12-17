@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 import { FaCheck, FaTimes } from "react-icons/fa";
 
 export default class DisplayTasks extends React.Component {
-    //Constructor
-    constructor(props) {
-        super(props)
 
-    }
 
     //Render method
     render() {

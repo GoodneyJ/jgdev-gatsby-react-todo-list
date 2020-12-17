@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import DisplayTasks from './displaytasks.js'
 import Styles from './styles.css'
 
-export default class Index extends React.Component {
+export default class Index extends Component {
   //Constructor
   constructor(props) {
     super(props)
