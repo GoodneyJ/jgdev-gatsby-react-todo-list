@@ -45,11 +45,11 @@ export default class Index extends Component {
     })
   }
 
-  //method applies text affect to specific element, had to rework it from using the IDs because it would break after adding new and deleting existing items.
-  //Will return to rework this
+  //method applies text affect to specific task
   onComplete = (e) => {
-    let clickedEl = document.getElementById('task' + e.task)
+    let clickedEl = document.getElementById('task-item' + e.task)
     this.state.counter % 2 === 0 ? clickedEl.style.textDecoration = 'line-through' : clickedEl.style.textDecoration = 'none';
+    this.state.counter % 2 === 0 ? clickedEl.style.color = '#0c131e' : clickedEl.style.color = '#fff';
     this.setState({
       counter: this.state.counter + 1
     })
@@ -58,20 +58,24 @@ export default class Index extends Component {
   //Render method
   render() {
     return (
-      <div id='wrapper'>
-        <h2>Task List</h2>
-        <DisplayTasks
-          className={this.state.className}
-          tasks={this.state.taskList}
-          removeItem={this.onRemoveItem}
-          onComplete={this.onComplete}
-        />
-        {/* USER INPUT SECTION */}
-        <div id='form'>
-          <input type="text" value={this.state.input} onChange={this.onChangeInput}/>
-          <button id='btn' type="button" onClick={this.onAddItem}>ADD</button>
+      <div id="app">
+        <div id='wrapper'>
+          {/* USER INPUT SECTION */}
+          <div id='form'>
+              <input type="text" value={this.state.input} onChange={this.onChangeInput} placeholder=" Create a new task..."/>
+              <button id='btn' type="button" onClick={this.onAddItem}>+</button>
+          </div>
+          
+          <div id="task-wrapper">
+              <h2>Task List</h2>
+              <DisplayTasks
+                className={this.state.className}
+                tasks={this.state.taskList}
+                removeItem={this.onRemoveItem}
+                onComplete={this.onComplete}
+              />
+          </div>
         </div>
-
       </div>
     )
   }

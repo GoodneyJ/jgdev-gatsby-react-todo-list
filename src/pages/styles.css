@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+/* GENERAL HTML ELEMENT RULES */
+
 html {
     font-family: 'Montserrat';
     text-align: center;
+}
+
+body {
+    background-color: #181E2A;
+    color: rgb(226, 226, 226);
 }
 
 h2 {
@@ -18,90 +27,132 @@ li {
     font-weight: 600;
     text-align: left;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: .25rem;
+    padding: .5rem;
+    border-bottom: 1px solid #2d3a4e;
 }
 
+/* APP ITSELF */
+
+
+/* CONTAINERS */
+
+#app {
+    position: relative;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+#wrapper {
+    margin-top: 10rem;
+}
+
+/* INPUT SECTION */
+
 #form {
-    margin-left: 4px;
-    margin-right: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263142 !important;
+    height: 50px;
+    border-radius: 15px;
+    width: 100%;
+    transform: translateY(-50%);
+    
 }
 
 input {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: .75rem;
+    text-transform: uppercase;
+    vertical-align: baseline !important;
+    color: #6e8dbd;
+    background-color: transparent;
     margin-left: 1rem;
     float: left;
-    padding: .25rem;
+    height: 30px;
+    width: 350px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: color 175ms linear;
+}
+
+input:hover {
+    color: #59739b;
+    transition: color 175ms linear;
 }
 
 #btn {
+    outline: none;
+    width: 30px;
+    height: 30px;
     font-family: 'Montserrat';
-    font-weight: 800;
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-right: 1rem;
     float: right;
     border: none;
-    padding: .25rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color: aquamarine;
+    color: #181f29;
+    background-color: #6e8dbd;
+    border-radius: 15px;
+    transition: background-color 175ms linear;
 }
 
-.libtn {
+#btn:hover {
+    background-color: #8bb6f6;
+    transition: background-color 175ms linear;
+}
 
+/* TODO LIST OUT / INTERFACE */
+
+#task-wrapper {
+    background-color: #263142 !important;
+    border-radius: 15px;
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1) , 0px 10px 10px -5px rgba(0,0,0,0.04) ;
+}
+
+#task-item {
+    top: 50%;
+    margin: 0;
+}
+
+/* INTERFACE BUTTONS */
+
+.libtn {
+    outline: none;
+    height: 30px;
+    width: 30px;
     text-align: center;
     color: #fff;
     border: none;
-    padding: .35rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
+    border-radius: 15px;
     text-decoration: none !important;
 }
 
 .complete {
-    background-color: #098b3b;
+    text-decoration: none;
+    background-color: #1d4b4d;
+    transition: background-color 175ms linear;
 }
 
 .del {
-    background-color: rgb(212, 40, 40);
+    background-color: #1d4b4d;
+    font-weight: 700;
+    font-size: .75rem;
+    transition: background-color 175ms linear;
 }
 
-@media only screen and (min-width: 768px) {
-    #wrapper {
-        margin-left: 2.5rem;
-        margin-right: 2.5rem;
-    }
+.complete:hover ,.del:hover {
+    background-color: #317a7e !important;
+    transition: background-color 175ms linear;
 }
 
-@media only screen and (min-width: 992px) {
-    #wrapper {
-        margin-left: 3.5rem;
-        margin-right: 3.5rem;
-    }
-
-    input {
-        width: 35%;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    #wrapper {
-        margin-left: 5.5rem;
-        margin-right: 5.5rem;
-    }
-
-    input {
-        width: 35%;
-    }
-}
-
-@media only screen and (min-width: 1920px) {
-    #wrapper {
-        margin-left: 9.5rem;
-        margin-right: 9.5rem;
-    }
-
-    input {
-        width: 35%;
-    }
-}
 

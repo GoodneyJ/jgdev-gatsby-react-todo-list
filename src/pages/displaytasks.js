@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { FaCheck, FaTimes } from "react-icons/fa";
+import React from 'react'
+
 
 export default class DisplayTasks extends React.Component {
 
@@ -8,9 +8,19 @@ export default class DisplayTasks extends React.Component {
     render() {
 
         //MAP for displaying the task list from state, and buttons for each task to complete/delete
-        let tasks = this.props.tasks.map(task => <li id={`task`+task.task} key={task.id}><button className='libtn complete' onClick={() => this.props.onComplete(task)}><FaCheck /></button>{task.task}<button onClick={() => this.props.removeItem(task)} className='libtn del'><FaTimes /></button></li>)
+        let tasks = this.props.tasks.map(task =>
+                    <li key={task.id}>
+                        <button className='libtn complete' onClick={() => this.props.onComplete(task)}>
+                            &#x2714;
+                        </button>
+
+                        <p id={`task-item`+task.task}>{task.task}</p>
+
+                        <button onClick={() => this.props.removeItem(task)} className='libtn del'>X</button>
+                    </li>);
+
         return (
-            <div>
+            <div id="app-wrap">
                 <ul>
                     {tasks}
                 </ul>
